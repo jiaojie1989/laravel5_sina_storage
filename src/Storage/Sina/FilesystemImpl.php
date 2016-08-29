@@ -37,7 +37,7 @@ class FilesystemImpl extends Filesystem {
     }
 
     protected function getExtensionName($path) {
-        return "";
+        return "default";
     }
 
     public function put($path, $contents, array $config = []) {
