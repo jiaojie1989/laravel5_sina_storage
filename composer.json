@@ -1,0 +1,27 @@
+{
+    "name": "jiaojie/laravel5-sina-storage",
+    "description": "Sina S3 storage service provider, made by SINA finance client api team.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JIAO Jie",
+            "email": "thomasjiao@vip.qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "cloudmario/scs": "dev-master",
+        "league/flysystem": "~1.0",
+        "laravel/framework": "~5.0.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jiaojie\\Laravel\\Storage\\": "src/Storage"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
