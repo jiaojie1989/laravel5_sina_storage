@@ -32,12 +32,7 @@ class FilesystemImpl extends Filesystem {
     }
 
     protected function detectContentType($path) {
-        $extension = $this->getExtensionName($path);
-        return MimeTypes::getType($extension);
-    }
-
-    protected function getExtensionName($path) {
-        return "default";
+        return MimeTypes::guessTypeByExtension($path);
     }
 
     public function put($path, $contents, array $config = []) {

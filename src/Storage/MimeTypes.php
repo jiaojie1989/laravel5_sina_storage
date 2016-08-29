@@ -31,15 +31,29 @@ class MimeTypes {
         'html' => 'text/html',
         'pdf' => 'application/pdf',
         'ppt' => 'application/vnd.ms-powerpoint',
+        'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
         'txt' => 'text/plain',
         'wps' => 'application/vnd.ms-works',
         'xlm' => 'application/vnd.ms-excel',
         'xls' => 'application/vnd.ms-excel',
+        'xml' => 'application/xml',
         'apk' => 'application/vnd.android.package-archive',
+        'gtar' => 'application/x-gtar',
+        'gz' => 'application/x-gzip',
+        'gzip' => 'application/x-gzip',
+        'swf' => 'application/x-shockwave-flash',
+        'tar' => 'application/x-tar',
+        'tgz' => 'application/x-tar',
+        'zip' => 'application/x-zip',
+        'rar' => 'application/x-rar',
         'json' => 'application/json',
         'png' => "image/png",
         'jpg' => "image/jpeg",
         'js' => "application/javascript",
+        'jar' => 'application/java-archive',
+        '7zip' => 'application/x-7z-compressed',
+        '7z' => 'application/x-7z-compressed',
     ];
 
     public static function getType($type) {
@@ -47,6 +61,17 @@ class MimeTypes {
             $type = "default";
         }
         return static::$mimeTypes[strtolower($type)];
+    }
+
+    /**
+     * Guess File Extension
+     *      Inspired by \League\Flysystem\Util\MimeType
+     * @param string $path
+     * @return string
+     */
+    public static function guessTypeByExtension($path) {
+        $extension = pathinfo($path, PATHINFO_EXTENSION);
+        return static::getType($extension);
     }
 
 }
