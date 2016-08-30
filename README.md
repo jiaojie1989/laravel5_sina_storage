@@ -1,5 +1,6 @@
 Sina Storage For Laravel 5
 ===
+[![Latest Stable Version](https://poser.pugx.org/jiaojie/laravel5-sina-storage/v/stable.svg)](https://packagist.org/packages/jiaojie/laravel5-sina-storage) [![Total Downloads](https://poser.pugx.org/jiaojie/laravel5-sina-storage/downloads.svg)](https://packagist.org/packages/jiaojie/laravel5-sina-storage) [![Latest Unstable Version](https://poser.pugx.org/jiaojie/laravel5-sina-storage/v/unstable.svg)](https://packagist.org/packages/jiaojie/laravel5-sina-storage) [![License](https://poser.pugx.org/jiaojie/laravel5-sina-storage/license.svg)](https://packagist.org/packages/jiaojie/laravel5-sina-storage)
 ## Setup
 ### Setting up Service Provider
 Put `Jiaojie\Laravel\Storage\Providers\S3Provider` in your `config/app.php` `providers` array.
