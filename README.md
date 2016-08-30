@@ -1,9 +1,10 @@
 Sina Storage For Laravel 5
 ===
-# Setting up Service Provider
+## Setup
+### Setting up Service Provider
 Put `Jiaojie\Laravel\Storage\Providers\S3Provider` in your `config/app.php` `providers` array.
 
-# Setting configure for your SINA S3 Service
+### Setting configure for your SINA S3 Service
 In your `config/filesystems.php`, put your config array into `disks`.
 ```php
 "sina" => [
@@ -16,7 +17,7 @@ In your `config/filesystems.php`, put your config array into `disks`.
         ],
 ```
 
-# Use
+### Use
 ```php
 $disk = Storage::disk("sina");
 $disk->put("finapp/js/$filename.js", file_get_contents($path));
@@ -24,7 +25,7 @@ $disk->put("finapp/js/$filename.js", file_get_contents($path));
 
 It will detect the mime type by your defined filename extension, in the example, it is "js".
 
-# Thanks
+## Thanks
 Thanks to the framework laravel team for its wonderful framework.
 
 Thanks to the league/flysystem for its general api of file system.
