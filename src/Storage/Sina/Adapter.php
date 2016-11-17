@@ -79,7 +79,25 @@ class Adapter implements AdapterInterface {
     }
 
     public function listContents($directory = '', $recursive = false) {
-        
+        $contents = $this->client->getBucket("file.finance.sina.com.cn", $directory . "/", null, null, '/', true);
+        $ret = [];
+        foreach ($contents as $k => $v) {
+            if (isset($v["prefix"])) {
+                $ret[] = [
+                    "type" => "dir",
+                    "path" => substr($k, 0, -1),
+                ];
+            } else {
+                $ret[] = [
+                    "type" => "file",
+                    "path" => $k,
+                    "size" => $v["size"],
+                    "mime" => $v["type"],
+                    "timestamp" => $v["time"],
+                ];
+            }
+        }
+        return $ret;
     }
 
     public function read($path) {
